@@ -39,7 +39,7 @@ export default class Snake {
     }
     changeDirection(direction) {
         if (direction !== this.direction) {
-            const audio = new Audio('/assets/move.mp3');
+            const audio = new Audio('./assets/move.mp3');
             audio.play();
             this.direction = direction;
         }
