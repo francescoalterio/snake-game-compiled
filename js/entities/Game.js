@@ -9,7 +9,7 @@ export default class Game {
         this.Food = new Food();
         this.gameInterval = setInterval(this.bodyGameInterval.bind(this), 1000);
         document.addEventListener("keypress", this.startListenersWASD.bind(this));
-        const audio = new Audio('../assets/game-thrones-song.mp3');
+        const audio = new Audio('/assets/game-thrones-song.mp3');
         audio.play();
     }
     bodyGameInterval() {
@@ -32,7 +32,7 @@ export default class Game {
         const bumpIntoMyselfCondition = this.Snake.lastMovements.find(x => x.row === this.Snake.headPosition.row && x.column === this.Snake.headPosition.column);
         if (condition || bumpIntoMyselfCondition) {
             clearInterval(this.gameInterval);
-            const audio = new Audio('../assets/gameover.mp3');
+            const audio = new Audio('/assets/gameover.mp3');
             audio.play();
             (_a = document.querySelector('.table')) === null || _a === void 0 ? void 0 : _a.remove();
             const $btnPlayAgain = document.createElement('button');
