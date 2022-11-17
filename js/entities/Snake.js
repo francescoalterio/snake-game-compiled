@@ -38,8 +38,11 @@ export default class Snake {
         console.log(this.headPosition);
     }
     changeDirection(direction) {
-        if (direction !== this.direction)
+        if (direction !== this.direction) {
+            const audio = new Audio('../assets/move.mp3');
+            audio.play();
             this.direction = direction;
+        }
     }
     eat() {
         this.lastMovements.push(this.lastBodyBoxPosition);
